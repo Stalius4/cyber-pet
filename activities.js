@@ -7,20 +7,12 @@
 // // expected output: Array [2, 8, 18, 32]
 
 
-const add = (a,b) => {
-    return a+b;
+
+function func2(callback) {
+    setTimeout(() => {
+        console.log("this is func2");
+        callback()
+    }, 5000);
 }
-const subtract = (a,b) => {
-    return a - b;
-}
-const multiply = (a,b) => {
-    return a*b;
-}
-const divide = (a,b) => {
-    return a/b;
-}
-const doMaths = (num1) => {
-    return (num2, fn) => {
-        return fn(num1, num2);
-    }
-}
+
+func2(func1);

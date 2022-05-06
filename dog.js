@@ -72,16 +72,6 @@ class Pet {
 const petName = new Pet("Tufis")
 setTimeout(petName.play(), 2000)
 
-// petName.play()
-// petName.play()
-// petName.play()
-// petName.play()
-// petName.play()
-
-// console.log(petName)
-// petName.play()
-// petName.eat()
-// console.log(petName)
 let drinkMeter = document.querySelector("#drinkMeter")
 let hungerMeter = document.querySelector("#hungerMeter")
 const playBtn = document.querySelector("#play")
@@ -96,12 +86,19 @@ let bunny2= document.getElementById("bunny-straight")
 let bunnySide = document.querySelector("#bunny-right")
 
 
+
+
 function shake(place){
     place.classList.remove("shake")
     place.offsetWidth
     place.classList.add("shake")
 }
 
+function func1() {
+    setTimeout(() => {
+        console.log("this is func1");
+    }, 1000);
+}
 
 playBtn.addEventListener("click", () =>{
     petName.play();
@@ -112,6 +109,12 @@ playBtn.addEventListener("click", () =>{
     shake(drinkMeter)
     bunnySide.style.display="none"
     bunny2.style.display="inline"
+    setTimeout(() => {
+        console.log("change display")
+        bunnySide.style.display="inline"
+        bunny2.style.display="none"
+    }, 5000);
+    
     // bunny2.classList.add("bounce-5")
     // bunny2.offsetWidth
     // bunny2.classList.add("bunny-straight")
