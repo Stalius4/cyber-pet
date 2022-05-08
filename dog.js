@@ -84,7 +84,7 @@ const energytDisplay =document.querySelector("#energyDisplay")
 let bunny = document.getElementsByClassName("bunny-straight")
 let bunny2= document.getElementById("bunny-straight")
 let bunnySide = document.querySelector("#bunny-right")
-
+const splashs =document.getElementById("splash")
 
 
 
@@ -94,6 +94,11 @@ function shake(place){
     place.classList.add("shake")
 }
 
+function splash(place){
+    place.classList.remove("splash")
+    place.offsetWidth
+    place.classList.add("splash")
+}
 function func1() {
     setTimeout(() => {
         console.log("this is func1");
@@ -124,8 +129,10 @@ playBtn.addEventListener("click", () =>{
 drinkBtn.addEventListener("click", () =>{
     petName.drink();
     shake(drinkMeter)
-    drinkMeter.value =petName.thirst });
-    
+    drinkMeter.value =petName.thirst 
+    splash(splashs)
+});
+ 
 function size(image){
     if(petName.hunger >= 95){
         image.style.transform ="scale1.95)"
