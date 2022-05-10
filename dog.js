@@ -63,19 +63,23 @@ class Pet {
         this._enegry += 20;
         this._hunger -= 10;
         this._thirst -=10;
+        }
     }
-
-    
+    time(){
+        this._energy -=2
+        this._hunger -= 1;
+        this._thirst -=2;
     }
 }
 
 const petName = new Pet("Tufis")
-setTimeout(petName.play(), 2000)
+
 
 let drinkMeter = document.querySelector("#drinkMeter")
 let hungerMeter = document.querySelector("#hungerMeter")
 const playBtn = document.querySelector("#play")
 const drinkBtn = document.querySelector("#drink")
+const sleepBtn = document.querySelector("#sleep")
 let heartImg = document.querySelector("#heart-img")
 const thirstDisplay =document.querySelector("#thirstDisplay")
 const hungerDisplay =document.querySelector("#hungerDisplay")
@@ -85,7 +89,7 @@ let bunny = document.getElementsByClassName("bunny-straight")
 let bunny2= document.getElementById("bunny-straight")
 let bunnySide = document.querySelector("#bunny-right")
 const splashs =document.getElementById("splash")
-
+const forestBg =document.getElementById("forest-img")
 
 
 function shake(place){
@@ -133,32 +137,24 @@ drinkBtn.addEventListener("click", () =>{
     splash(splashs)
 });
  
-function size(image){
-    if(petName.hunger >= 95){
-        image.style.transform ="scale1.95)"
-    }else if(petName.hunger >= 90){
-        image.style.transform ="scale(1.90)"
-   
-    }else if(petName.hunger >= 85){
-        image.style.transform ="scale(1.85)"
-
-    }else if(petName.hunger >= 80){
-        image.style.transform ="scale(1.80)"
-
-    }else if(petName.hunger >= 75){
-        image.style.transform ="scale(1.75)"
-
-    }else if(petName.hunger >= 70){
-        image.style.transform ="scale(1.70)"
-
-    }else if(petName.hunger >= 65){
-        image.style.transform ="scale(1.65)"
-
-    }else if(petName.hunger >= 60){
-        image.style.transform ="scale(1.60)"
-    }
-
-}
+setInterval(() => {
+    petName.time()
+    console.log("minus")
+    hungerMeter.value =petName.hunger
+    drinkMeter.value =petName.thirst
+}, 3000);
 
 
-let userDetail
+sleepBtn.addEventListener("click", () =>{
+    forestBg.classList.add("night")
+    forestBg.offsetWidth
+    forestBg.classList.add("night")
+    bunnySide.style.display= "none";
+    bunny2.style.display= "inline"
+    bunny2.style.animation ="none";
+    setTimeout(() => {
+        console.log("change display")
+        bunnySide.style.display="inline"
+        bunny2.style.display="none"
+    }, 5000);
+})
