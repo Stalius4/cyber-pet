@@ -288,7 +288,7 @@ button:hover {
     }
   }
 
-#splash {
+#splash, #carrot {
   position:absolute;
   width: 150px;
 opacity: 0;
@@ -358,3 +358,16 @@ filter:brightness(0.1) ;
     0%{filter: brightness(0.9);}
     50%{filter: brightness(0.6);}
     100%{filter: brightness(0.1);}}
+
+#bunny-straight-sleep{
+  justify-self: center;
+  position: relative;
+  width: 110px;
+  align-self: center;
+  bottom: -60px;
+  grid-area: main;
+  display:none;
+}
+
+  
+
